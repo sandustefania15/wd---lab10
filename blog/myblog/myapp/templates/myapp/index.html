@@ -1,0 +1,476 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandu Stefania - Blog</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_BackToTop.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_SearchPosts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!--Icon Library-->
+ 
+  </head>
+
+  <body>
+<nav class="navbar">
+  <div class="name">Stefy's Blog</div>
+
+  <ul class="nav-links">
+    <li class="dropdown">
+      <a href="{% url 'home' %}" class="dropdown-toggle">Home</a>
+      <ul class="dropdown-content">
+        <li><a href="{% url 'home' %}#post1">Post 1</a></li>
+        <li><a href="{% url 'home' %}#post2">Post 2</a></li>
+        <li><a href="{% url 'home' %}#post3">Post 3</a></li>
+        <li><a href="{% url 'home' %}#post4">Post 4</a></li>
+        <li><a href="{% url 'home' %}#post5">Post 5</a></li>
+      </ul>
+    </li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'form' %}">Form</a></li>
+    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+    <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+  </ul>
+
+  <div class="header-social-links">
+    <a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"></a>
+    <a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"></a>
+    <a href="https://www.linkedin.com" class="fa fa-linkedin" target="_blank"></a>
+  </div>
+</nav>
+
+
+
+    <main class="main">
+
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top"> &#9650; </button>
+
+
+      <h1 class="blog-title">Welcome to Sandu Stefania - Blog</h1>
+      
+      <div id="searchContainer">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button id="searchButton" onclick="searchPosts()">Search</button>
+      </div>
+
+      <!-- Blog Post 1 -->
+
+      {% block content %}
+
+{% for post in posts %}
+<article>
+<h2 class="test">{{ post.title }}</h2>
+<p id="test">Posted on {{ post.post_date }}</p>
+<img src="{{ post.image.url }}" alt="hybnh" class="hnhh">
+<p>{{ post.paragraph }}</p>
+<a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+</article>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+      <article>
+        <div class="blog-post">
+         <section id="post1"> 
+            <h1 class="post-title"><span> Post 1 - My University </span></h1>
+            
+            <p>By Sandu Stefania | Posted on 26.02.2025</p>
+
+
+            <div class="university-container">
+              <img src="{% static 'images/uvt_perete.jpg' %}" alt="university" />
+
+
+              <h1>West University of Timișoara</h1>
+
+              <p>
+                The university I am studying at is the
+                <strong>West University of Timișoara</strong>.
+              </p>
+
+              <p>
+                The West University of Timișoara (<em
+                  >Universitatea de Vest din Timișoara</em
+                >, UVT) is a public higher education institution located in
+                Timișoara. Recognized as a university of education and
+                scientific research, UVT is one of the nine members of the
+                Universitaria Consortium, a group of Romania’s elite
+                universities. It is also part of the National
+                Research–Development–Innovation System as an accredited higher
+                education institution.
+              </p>
+
+              <p>
+                UVT consists of <strong>11 faculties</strong>, each with
+                specialized departments and a teacher training department. The
+                faculties offer nationally accredited study programs at the
+                bachelor's, master's, and doctoral levels in fields such as:
+              </p>
+
+              <ul>
+                <li>Arts and Design</li>
+                <li>Chemistry, Biology, and Geography</li>
+                <li>Economics and Business Administration</li>
+                <li>Law</li>
+                <li>Letters, History, and Theology</li>
+                <li>Mathematics and Computer Science</li>
+                <li>Music and Theater</li>
+                <li>Physical Education and Sports</li>
+                <li>Physics</li>
+                <li>
+                  Political Sciences, Philosophy, and Communication Sciences
+                </li>
+                <li>Sociology and Psychology</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      
+      </article>
+
+      <!-- Blog Post 2 -->
+      <article>
+        <div class="blog-post2">
+            <section id="post2" >
+          <h1 class="post-title"><span>Post 2 - The raccoon</span></h1>
+          <p>By Sandu Stefania | Posted on 27.02.2025</p>
+
+          <div>
+            <div class="images-raccoons">
+              <img src="{% static 'images/raccoon1.jpg' %}" alt="raccoon" />
+              <img src="{% static 'images/raccoon2.jpg' %}" alt="raccoon" />
+              <img src="{% static 'images/raccoon3.jpg' %}" alt="raccoon" />
+              <img src="{% static 'images/raccoon4.jpg' %}" alt="raccoon" />
+            </div>
+
+            <p>
+              The raccoon, sometimes called the common raccoon or northern
+              raccoon to distinguish it from the other species, is a mammal
+              native to North America. <br />It is the largest of the procyonid
+              family, having a body length of 40 to 70 cm (16 to 28 in), and a
+              body weight of 5 to 26 kg (11 to 57 lb). Its grayish coat mostly
+              consists of dense underfur, which insulates it against cold
+              weather. <br />
+              The animal's most distinctive features include its extremely
+              dexterous front paws, its facial mask, and its ringed tail, which
+              are common themes in the mythologies of the Indigenous peoples of
+              the Americas surrounding the species. <br />
+              The raccoon is noted for its intelligence, and studies show that
+              it is able to remember the solution to tasks for at least three
+              years. It is usually nocturnal and omnivorous, eating about 40%
+              invertebrates, 33% plants, and 27% vertebrates.
+            </p>
+          </div>
+          </section>
+        </div>
+      </article>
+
+      <!-- Blog Post 3 -->
+      <article>
+        <div class="blog-post">
+            <section id="post3" >
+          <h1 class="post-title"><span>Post 3 - About music</span></h1>
+          <p>By Sandu Stefania | Posted on 28.02.2025</p>
+
+          <div class="container3-1">
+            <div class="main-image">
+              <img src="{% static 'images/musical_notes.png' %}" alt="Musical Notes" />
+            </div>
+
+            <p class="intro-text">
+              Music is considered a universal language that connects people
+              around the world. It serves as a companion in both joy and sorrow,
+              making us feel special and filling us with enthusiasm. Music
+              allows us to relate to life’s experiences, and for all music
+              lovers, here are some fascinating facts about music that will
+              captivate you.
+            </p>
+
+            <div class="music-info">
+              <img src="{% static 'images/musicnote.jpg' %} " alt="Music Note" />
+              <p>
+                <strong>What Is Music?</strong><br />
+                Music is an art form that combines sound in a structured way to
+                express emotions and ideas. It consists of melody, rhythm,
+                harmony, and tones that resonate with listeners, whether
+                performed live or recorded.
+              </p>
+            </div>
+          </div>
+
+          <div class="container3">
+            <h2>Interesting Facts About Music</h2>
+            <div class="fact">
+              <span class="number">1.</span>
+              <strong>Music Enhances Focus and Productivity:</strong> Music
+              helps create a relaxing environment, improving concentration and
+              motivation. Athletes and students often use music to boost
+              performance.
+            </div>
+            <div class="fact">
+              <span class="number">2.</span>
+              <strong>Heartbeats Sync with Music:</strong> Your body naturally
+              synchronizes with the beats, improving breathing and heart rate.
+              This is why joggers find music helpful for maintaining a steady
+              rhythm.
+            </div>
+            <div class="fact">
+              <span class="number">3.</span>
+              <strong>Music Alters Perception:</strong> The meaning of a song
+              can change over time, influenced by emotions and experiences.
+              Happy songs uplift, while sad songs provide reflection and
+              comfort.
+            </div>
+            <div class="fact">
+              <span class="number">4.</span>
+              <strong>Frisson and Emotional Response:</strong> Some songs
+              trigger a sensation known as 'frisson'—a chill or goosebumps
+              caused by powerful melodies and emotional moments in music.
+            </div>
+            <div class="fact">
+              <span class="number">5.</span>
+              <strong>Music Helps Plants Grow:</strong> Studies suggest that
+              plants exposed to soothing music grow healthier and faster, as
+              sound vibrations may stimulate their development.
+            </div>
+            <div class="fact">
+              <span class="number">6.</span>
+              <strong>Music Aids Memory Recovery:</strong> Patients with brain
+              injuries have shown improved memory recall when exposed to
+              familiar music, even when other methods fail.
+            </div>
+            <div class="fact">
+              <span class="number">7.</span>
+              <strong>Singing Reduces Stress:</strong> Singing releases
+              stress-relieving hormones, creating a calming effect and enhancing
+              overall well-being.
+            </div>
+            <div class="fact">
+              <span class="number">8.</span>
+              <strong>Babies Respond to Music in the Womb:</strong> Research
+              shows that unborn babies react to familiar music by moving their
+              hands, feet, and mouths.
+            </div>
+            <div class="fact">
+              <span class="number">9.</span>
+              <strong>Music Can Improve Motivation:</strong> Upbeat or favorite
+              tunes enhance focus, boost energy, and make tasks feel more
+              enjoyable.
+            </div>
+            <div class="fact">
+              <span class="number">10.</span>
+              <strong>Music May Help You Sleep Better:</strong> Listening to
+              calming tunes before bed relaxes the mind and body, making it
+              easier to fall and stay asleep.
+            </div>
+          </div>
+          </section>
+        </div>
+      </article>
+
+      <!-- Blog Post 4 -->
+      <section id="post4">
+      <article>
+        <div class="blog-post" >
+          
+          <h1 class="post-title"><span>Post 4 - What your favorite color means</span></h1>
+          <p>By Sandu Stefania | Posted on 1.03.2025</p>
+
+
+          <div style="display: flex; align-items: center">
+            <img
+              src="{% static 'images/color-wheel.jpg' %}"
+              alt="color wheel"
+              style="width: 300px; margin-right: 10px"
+            />
+            <p>
+              <strong>The psychology of your favorite color</strong> <br />
+              Color psychology is a study based on the various ways that colors
+              can influence our behavior. It is a relatively new field that is
+              backed by a growing body of scientific research. Color psychology
+              has wide-ranging applications, including in health, advertising,
+              urban design, and a myriad of other arenas. In everyday life, hues
+              may seem interesting, but not necessarily important. However,
+              research shows that colors can have a significant effect on our
+              perceptions, feelings, and behaviors.
+            </p>
+          </div>
+
+          <div class="content4">
+            <h2>What Your Favorite Color Says About You?</h2>
+            <p>
+              Some people have a preference for warm colors, others for cool
+              colors. Many people decide which color they like best at an early
+              age, which can impact color personality.
+              <br />
+              Different colors can evoke specific emotions and prompt strong
+              reactions. Because of this, the colors you surround yourself with
+              may send a signal to others about your personality, what you
+              value, and how you behave.
+            </p>
+
+            <div class="color-grid">
+              <div class="color-box black">
+                <strong>Black</strong><br />
+                Power, creativity, elegance, and independence. Often worn to
+                appear strong and sophisticated.
+              </div>
+              <div class="color-box white">
+                <strong>White</strong><br />
+                Purity, birth, and organization. Preferring white suggests
+                independence and logical thinking.
+              </div>
+              <div class="color-box red">
+                <strong>Red</strong><br />
+                Passion, energy, and adventure. Red can symbolize love,
+                intensity, and action.
+              </div>
+              <div class="color-box purple">
+                <strong>Purple</strong><br />
+                Royalty, ambition, and individuality. Historically associated
+                with prosperity and self-worth.
+              </div>
+              <div class="color-box pink">
+                <strong>Pink</strong><br />
+                Tenderness, kindness, and optimism. Often linked to joyful,
+                expressive personalities.
+              </div>
+
+              <div class="color-box orange">
+                <strong>Orange</strong><br />
+                Energy, enthusiasm, and warmth. A social color associated with
+                happiness and sunshine.
+              </div>
+              <div class="color-box blue">
+                <strong>Blue</strong><br />
+                Trust, peace, and loyalty. Blue lovers are often seen as calm
+                and dependable.
+              </div>
+              <div class="color-box green">
+                <strong>Green</strong><br />
+                Nature, growth, and stability. Connected to well-being, balance,
+                and renewal.
+              </div>
+              <div class="color-box yellow">
+                <strong>Yellow</strong><br />
+                Optimism, intelligence, and creativity. A bright color tied to
+                happiness and inspiration.
+              </div>
+              <div class="color-box brown">
+                <strong>Brown</strong><br />
+                Earthy, simple, and stable. Brown lovers value reliability and a
+                grounded lifestyle.
+              </div>
+            </div>
+          </div>
+          </section>
+        </div>
+      </article>
+
+      <!-- Blog Post 5 -->
+      <article>
+        <div class="blog-post">
+            <section id="post5">
+          <h1 class="post-title">
+            <span
+              >Post 5 - Artificial intelligence: what is it and how is it
+              used?</span
+            >
+          </h1>
+          <p>By Sandu Stefania | Posted on 3.03.2025</p>
+          <div style="display: flex; align-items: center">
+            <img
+              src="{% static 'images/AI.jpg' %}"
+              alt="ai photo"
+              style="width: 300px; margin-right: 10px"
+            />
+
+            <p>
+              <strong> What is artificial intelligence (AI)? </strong> <br />
+
+              AI is the ability of a machine to display human-like capabilities
+              such as reasoning, learning, planning and creativity.
+              <br />
+              AI enables technical systems to perceive their environment, deal
+              with what they perceive, solve problems and act to achieve a
+              specific goal. The computer receives data - already prepared or
+              gathered through its own sensors such as a camera - processes it
+              and responds.
+              <br />
+              AI systems are capable of adapting their behaviour to a certain
+              degree by analysing the effects of previous actions and working
+              autonomously.
+            </p>
+          </div>
+
+          <h2>AI in Everyday Life</h2>
+          <p>
+            <strong
+              >Below are some AI applications that you may not realize are
+              AI-powered:</strong
+            >
+          </p>
+
+          <ul>
+            <li>
+              <strong>Online Shopping & Advertising:</strong> provides
+              personalized recommendations based on browsing history and
+              optimizes inventory management.
+            </li>
+            <li>
+              <strong>Web Search:</strong> Search engines analyze vast amounts
+              of user data to provide accurate search results.
+            </li>
+            <li>
+              <strong>Digital Personal Assistants:</strong> powers virtual
+              assistants, answering questions and helping with daily tasks.
+            </li>
+            <li>
+              <strong>Machine Translations:</strong> improves language
+              translation for both written and spoken text.
+            </li>
+            <li>
+              <strong>Smart Homes & Cities:</strong> optimizes energy use in
+              homes and regulates traffic in smart cities.
+            </li>
+            <li>
+              <strong>Cars:</strong> enhances vehicle safety features and
+              navigation systems.
+            </li>
+            <li>
+              <strong>Cybersecurity:</strong> detects and prevents cyber threats
+              by analyzing patterns in real time.
+            </li>
+          </ul>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Sandu Stefania - Blog</p>
+    </footer>
+
+  
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/index_BackToTop.js' %}"></script>
+    <script src="{% static 'js/index_SearchPosts.js' %}"></script>
+
+
+  </body>
+</html>

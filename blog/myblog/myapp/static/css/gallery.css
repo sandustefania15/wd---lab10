@@ -1,0 +1,84 @@
+/* Styles for large screens */
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+}
+
+/* Styles for medium screens */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+/* Styles for small screens */
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+.main {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 5px;
+    padding: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.slider {
+    position: relative;
+    max-width: 60%;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}

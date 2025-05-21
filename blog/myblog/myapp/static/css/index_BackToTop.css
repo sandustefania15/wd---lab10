@@ -1,0 +1,18 @@
+#scrollToTopBtn {
+  display: none; /* Will be shown with JS when scrolled */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #008cba;
+}

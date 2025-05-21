@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{& static 'css/form.css' &}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <!--Icon Library-->
+    <title>Form Page</title>
+  </head>
+
+  <body>
+<nav class="navbar">
+  <div class="name">Stefy's Blog</div>
+
+  <ul class="nav-links">
+    <li class="dropdown">
+      <a href="{% url 'home' %}" class="dropdown-toggle">Home</a>
+      <ul class="dropdown-content">
+        <li><a href="{% url 'home' %}#post1">Post 1</a></li>
+        <li><a href="{% url 'home' %}#post2">Post 2</a></li>
+        <li><a href="{% url 'home' %}#post3">Post 3</a></li>
+        <li><a href="{% url 'home' %}#post4">Post 4</a></li>
+        <li><a href="{% url 'home' %}#post5">Post 5</a></li>
+      </ul>
+    </li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'form' %}">Form</a></li>
+    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+    <li><a href="{% url 'chatbot' %}">Chatbot</a></li>
+  </ul>
+
+  <div class="header-social-links">
+    <a href="https://www.facebook.com" class="fa fa-facebook" target="_blank"></a>
+    <a href="https://www.instagram.com" class="fa fa-instagram" target="_blank"></a>
+    <a href="https://www.linkedin.com" class="fa fa-linkedin" target="_blank"></a>
+  </div>
+</nav>
+    <script src="{% static 'js/menu.js' %}"></script>
+
+    <main class="main">
+      <div class="info-text">
+        <h2>Welcome to The Formular</h2>
+        <p>Do not forget to fill it in. Thank u!</p>
+      </div>
+
+      <form action="/submit" method="post" onsubmit="return validateForm()">
+        <fieldset style="width: fit-content">
+          <legend><strong>Formular</strong></legend>
+
+          <label for="first-name">First name:</label>
+          <input type="text" id="first-name" name="first-name" />
+          <br /><br />
+
+          <label for="last-name">Last name:</label>
+          <input type="text" id="last-name" name="last-name" />
+          <br /><br />
+
+          <label>Gender:</label>
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+          <br /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+          <br /><br />
+
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" />
+          <br /><br />
+
+          <label for="country">Country:</label>
+          <select id="country" name="country">
+            <option value="">--Select a country--</option>
+          </select>
+          <br /><br />
+
+          <label for="address">Address:</label>
+          <textarea id="address" name="address"></textarea>
+          <br /><br />
+
+          <label>Interests:</label><br />
+          <input type="checkbox" id="sports" name="interests" value="sports" />
+          <label for="sports">Sports</label><br />
+          <input type="checkbox" id="music" name="interests" value="music" />
+          <label for="music">Music</label><br />
+          <input type="checkbox" id="movies" name="interests" value="movies" />
+          <label for="movies">Movies</label> <br />
+          <input type="checkbox" id="photography" name="interests" value="Photography"/>
+          <label for="photography">Photography</label><br />
+          <input type="checkbox" id="travel" name="interests" value="travel" />
+          <label for="travel">Travelling</label><br />
+          <br />
+
+          <label for="profile-picture">Profile Picture:</label><br />
+          <label for="profile-picture" class="custom-file-label">Choose File</label>
+          <input type="file" id="profile-picture" name="profile-picture" />
+          <br /><br />
+
+        <label for="cv">Upload CV (PDF only):</label><br />
+        <label for="cv" class="custom-file-label">Choose File</label>
+        <input type="file" id="cv" name="cv" accept=".pdf" />
+          <br /><br />
+
+          <label>Communication Preferences:</label><br />
+          <input type="checkbox" id="email-preference" name="communication" value="email"/>
+          <label for="email-preference">Email</label><br />
+          <input type="checkbox" id="sms-preference" name="communication" value="sms"/>
+          <label for="sms-preference">SMS</label>
+          <br /><br />
+
+          <button type="submit" id="submit-but">Submit</button>
+
+        </fieldset>
+        
+      </form>
+
+      <script src="{% static 'js/form.js' %}"></script>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Sandu Stefania - Blog</p>
+    </footer>
+  </body>
+</html>
